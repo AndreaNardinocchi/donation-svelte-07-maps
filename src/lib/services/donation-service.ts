@@ -6,7 +6,7 @@ import { computeByCandidate, computeByMethod } from "./donation-utils";
 
 export const donationService = {
   // baseUrl: "http://localhost:4000",
-  baseUrl: "https://donation-web-api-ts.glitch.me",
+  baseUrl: "https://four-abalone-violet.glitch.me",
 
   async signup(user: User): Promise<boolean> {
     try {
@@ -77,7 +77,7 @@ export const donationService = {
       currentDonations.donations = await this.getDonations(loggedInUser.token);
       currentCandidates.candidates = await this.getCandidates(loggedInUser.token);
       computeByMethod(currentDonations.donations);
-      computeByCandidate(currentDonations.donations, currentCandidates.candidates)
+      computeByCandidate(currentDonations.donations, currentCandidates.candidates);
     }
   },
 
